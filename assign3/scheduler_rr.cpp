@@ -12,7 +12,7 @@
 /**
  * @brief Construct a new SchedulerRR object
  */
-SchedulerRR::SchedulerRR(int time_quantum = 10){
+SchedulerRR::SchedulerRR(int time_quantum){
     this->time_quantum = time_quantum;
 }
 
