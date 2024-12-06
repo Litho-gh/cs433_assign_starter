@@ -1,16 +1,12 @@
 /**
 * Assignment 5: Page replacement algorithms
  * @file lru_replacement.h
- * @author ??? (TODO: your name)
+ * @author Zach Miller and Erin Bailey
  * @brief A class implementing the LRU page replacement algorithms
  * @version 0.1
  */
-//You must complete the all parts marked as "TODO". Delete "TODO" after you are done.
-// Remember to add sufficient and clear comments to your code
 
 #pragma once
-
-// Remember to add comments to your code
 
 #include "replacement.h"
 
@@ -19,7 +15,6 @@
  */
 class LRUReplacement : public Replacement
 {
-	// TODO: Add your implementation to this class
 public:
 	/**
 	 * @brief Constructor
@@ -33,12 +28,14 @@ public:
     */
     virtual ~LRUReplacement();
 
+    
     /**
      * @brief Accesss a page alreay in physical memory
      * It may be overridden in a subclass 
      * @param page_num The logical page number.
      */
-    virtual void touch_page(int page_num);
+    //virtual void touch_page(int page_num);
+    
 
     /**
      * @brief Access an invalid page, but free frames are available.
