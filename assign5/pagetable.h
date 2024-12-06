@@ -11,6 +11,7 @@
 
 // Remember to add comments to your code
 #include <vector>
+#include <queue>
 using namespace std;
 
 // A page table entry
@@ -40,8 +41,8 @@ public:
 	}
 	~PageEntry(){}
 
-	bool operator>(const PageEntry& rhs) const {
-		return this->last_access > rhs.last_access;
+	bool operator>(const PageEntry* rhs) const {
+		return this->last_access > rhs->last_access;
 	}
 };
 
