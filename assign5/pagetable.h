@@ -40,8 +40,8 @@ public:
 	}
 	~PageEntry(){}
 
-	bool operator>(const PageEntry& lhs, const PageEntry& rhs) const {
-		return lhs.last_access > rhs.last_access;
+	bool operator>(const PageEntry& rhs) const {
+		return this->last_access > rhs.last_access;
 	}
 };
 
