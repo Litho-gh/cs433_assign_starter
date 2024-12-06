@@ -108,7 +108,6 @@ int main(int argc, char *argv[]) {
     while (in2 >> val2) {
         large_refs.push_back(val2);
     }
-    cout << large_refs.size() << endl;
     in2.close();
 
     std::cout << "****************Simulate FIFO replacement****************************" << std::endl;
@@ -118,7 +117,6 @@ int main(int argc, char *argv[]) {
     FIFOReplacement vm2(num_pages, num_frames);
     for (std::vector<int>::const_iterator it = large_refs.begin(); it != large_refs.end(); ++it) {
         int page_num = (*it) >> page_offset_bits;
-        
         vm2.access_page(page_num, 0);
     }
     
@@ -127,6 +125,14 @@ int main(int argc, char *argv[]) {
     std::cout << "****************Simulate LIFO replacement****************************" << std::endl;
     // TODO: Add your code to calculate number of page faults using LIFO replacement algorithm
     // TODO: print the statistics and run-time
+    
+    LIFOReplacement vm3(num_pages, num_frames);
+    for (std::vector<int>::const_iterator it = large_refs.begin(); it != large_refs.end(); ++it) {
+        int page_num = (*it) >> page_offset_bits;
+        vm3.access_page(page_num, 0);
+    }
+    
+    vm3.print_statistics();
 
     std::cout << "****************Simulate LRU replacement****************************" << std::endl;
     // TODO: Add your code to calculate number of page faults using LRU replacement algorithm
