@@ -39,13 +39,10 @@ public:
 		}
 	}
 	~PageEntry(){}
-};
 
-struct compare_age {
-  bool operator()(const PageEntry& lhs, const PageEntry& rhs) const
-  {
-    return lhs.last_access < rhs.last_access;
-  }
+	bool operator>(const PageEntry& lhs, const PageEntry& rhs) const {
+		return lhs.last_access > rhs.last_access;
+	}
 };
 
 
